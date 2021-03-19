@@ -1,0 +1,28 @@
+service: plugins-demo
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  authorizer:
+    handler: handler.authorizer
+
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /hello
+          method: get
+          # authorizer:
+          #   name: authorizer
+          #   identitySource: method.request.header.Authorization
+          #   resultTtlInSeconds: 0
+
+  test:
+    handler: handler.test
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+  - serverless-dotenv-plugin
