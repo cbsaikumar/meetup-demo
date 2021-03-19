@@ -4,7 +4,8 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "start": "sls offline"
+    "start:dev": "sls offline --stage dev",
+    "start:prod": "sls offline --stage prod"
   },
   "author": "",
   "license": "ISC",
