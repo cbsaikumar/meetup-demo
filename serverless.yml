@@ -1,29 +1,15 @@
-service: plugins-demo
+service: invoke-another-lambda-demo
 
 provider:
   name: aws
   runtime: nodejs12.x
 
 functions:
-  authorizer:
-    handler: handler.authorizer
-
   hello:
     handler: handler.hello
     events:
       - http:
           path: /hello
-          method: get
-          # authorizer:
-          #   name: authorizer
-          #   identitySource: method.request.header.Authorization
-          #   resultTtlInSeconds: 0
-
-  updloadFile:
-    handler: handler.updloadFile
-    events:
-      - http:
-          path: /upload
           method: get
 
   test:

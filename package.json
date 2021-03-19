@@ -1,5 +1,5 @@
 {
-  "name": "plugins-demo",
+  "name": "invoke-another-lambda-demo",
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
