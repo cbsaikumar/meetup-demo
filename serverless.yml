@@ -19,6 +19,13 @@ functions:
           #   identitySource: method.request.header.Authorization
           #   resultTtlInSeconds: 0
 
+  updloadFile:
+    handler: handler.updloadFile
+    events:
+      - http:
+          path: /upload
+          method: get
+
   test:
     handler: handler.test
 
